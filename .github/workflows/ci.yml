@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04  # Usando la versión correcta de Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -22,8 +22,8 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
-        username: ${{ secrets.DOCKER_USERNAME }}  # Usando el secreto correctamente
-        password: ${{ secrets.DOCKER_PASSWORD }}  # Usando el secreto correctamente
+        username: ${{ secrets.DOCKER_USERNAME }}  # Nombre de usuario de Docker Hub
+        password: ${{ secrets.DOCKER_PASSWORD }}  # Personal Access Token como contraseña
 
     - name: Build Docker image
       run: |
